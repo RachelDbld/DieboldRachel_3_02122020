@@ -15,7 +15,7 @@
 
 <!--HEADER-->
         <header>
-            <h1>Ohmyfood</h1>
+            <h1>ohmyfood</h1>
         </header>
 
 <!--ENCART VILLE-->
@@ -26,7 +26,7 @@
 
 <!--SECTION DECOUVERTE-->
         <section id="decouverte">
-         <div id="baseline">
+         <div class="decouverte__title">
             <h2>Réservez le menu qui vous convient</h2>
             <h3>Découvrez des restaurants d'exception, séléctionnés par nos soins</h3>
          </div>
@@ -35,34 +35,41 @@
 
 <!--SECTION FONCTIONNEMENT-->
         <section id="fonctionnement">
+
             <h2>Fonctionnement</h2>
-            <div id="b1">
+            
+            <div class="fonctionnement-info">
                 <h5>1</h5>
-                <div id="legende1">
-                <div id="phone"><i class="fas fa-mobile-alt"></i></div>
+                <div class="fonctionnement-info__legende">
+                <div class="icone"><i class="fas fa-mobile-alt"></i></div>
                 <h4>Choisissez un restaurant</h4></div>
             </div>
-            <div id="b2">
+
+            <div class="fonctionnement-info">
                 <h5>2</h5>
-                <div id="legende2">
-                <div id="list"><i class="fas fa-list-ul"></i></div>
+                <div class="fonctionnement-info__legende">
+                <div class="icone"><i class="fas fa-list-ul"></i></div>
                 <h4>Composez votre menu</h4></div>
             </div>
-            <div id="b3">
+
+            <div class="fonctionnement-info">
                 <h5>3</h5>
-                <div id="legende3">
-                <div id="store"><i class="fas fa-store"></i></div>
-                <h4>Dégustez au restaurant</h4></div>
+                <div class="fonctionnement-info__legende fonctionnement-info__legende--purple">
+                    <div class="icone icone--purple"><i class="fas fa-store"></i></div>
+                      <h4>Dégustez au restaurant</h4>
+                </div>
             </div>
         </section>
 
 <!--SECTION RESTAURANTS-->   
         <section id="restaurant">
-            <H2>Restaurants</H2>
+         <h2>Restaurants</h2>
             <div id="palette">
-                <a href="#">
+                <h5>Nouveau</h5>
+             <a href="#">
+                <div id="box1">
                     <div id="image1"></div>
-                    <div id="texte1">
+                    <div class="texte">
                        <div class="legende">
                          <h4>La palette du goût</h4>
                          <h3>Ménilmontant</h3>
@@ -71,12 +78,73 @@
                          <i class="far fa-heart"></i>
                        </div>
                     </div>
-                </a>
+                </div>
+             </a>
             </div>
-        </section>   
 
+            <div id="note">
+                <h5>Nouveau</h5>
+             <a href="#">
+                <div id="box2">
+                    <div id="image2"></div>
+                    <div class="texte">
+                       <div class="legende">
+                         <h4>La note enchantée</h4>
+                         <h3>Charonne</h3>
+                       </div>
+                       <div id="heart">
+                         <i class="far fa-heart"></i>
+                       </div>
+                    </div>
+                </div>
+             </a>
+            </div>
 
+            <div id="francaise">
+             <a href="#">
+                <div id="box3">
+                    <div id="image3"></div>
+                    <div class="texte">
+                       <div class="legende">
+                         <h4>À la française</h4>
+                         <h3>Cité Rouge</h3>
+                       </div>
+                       <div id="heart">
+                         <i class="far fa-heart"></i>
+                       </div>
+                    </div>
+                </div>
+             </a>
+            </div>
 
+            <div id="delice">
+             <a href="#">
+                <div id="box4">
+                    <div id="image4"></div>
+                    <div class="texte">
+                       <div class="legende">
+                         <h4>Le délice des sens</h4>
+                         <h3>Folie-Méricourt</h3>
+                       </div>
+                       <div id="heart">
+                         <i class="far fa-heart"></i>
+                       </div>
+                    </div>
+                </div>
+             </a>
+            </div>
+        </section>
+<!--FOOTER-->
+        <footer>
+          <h1>ohmyfood</h1>
+            <ul>
+              <a href="#"><div class="ustensile"><i class="fas fa-utensils"></i><li><h5>Proposer un restaurant</h5></li></div></a>
+              <a href="#"><div class="hand"><i class="fas fa-hands-helping"></i><li><h5>Devenir partenaire</h5></li></div></a>
+              <a href="#"><li><h5>Mentions légales</h5></li></a>
+              <a href="#"><li><h5>Contact</h5></li></a>
+            </ul>
+        </footer>
     </div>
    </body>
+</html>
 
