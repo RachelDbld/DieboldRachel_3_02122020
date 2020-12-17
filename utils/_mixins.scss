@@ -1,0 +1,170 @@
+@mixin h1
+{
+	font-family: 'Shrikhand', cursive;
+    color: black;
+    font-size: 37px;
+}
+
+@mixin h2
+{
+	font-family: 'Roboto';
+	color: black;
+	font-size: 24px;
+	font-weight: 800;
+}
+
+@mixin h3
+{
+	font-family: 'Roboto';
+	color: black;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+@mixin h4{
+	font-family: 'Roboto';
+	font-weight: 700;
+	font-size: 16px;
+	color: black;
+}
+
+@mixin h5{
+	font-family: 'Roboto';
+	font-weight: 500;
+	font-size: 14px;
+	color: white;
+}
+
+/*pink-purple gradient button*/
+@mixin button{
+	text-decoration: none;
+	border-radius: 48px;
+	padding: 19px 50px;
+	margin-bottom: 16px;
+	background: -webkit-linear-gradient(top left, $secondary-color, $primary-color);
+	background: -moz-linear-gradient(bottom right, $secondary-color, $primary-color);
+	background: linear-gradient(to bottom right, $secondary-color, $primary-color );
+	box-shadow: 3px 5px 5px #d3d0d3;
+	transform: scale(1);
+    
+    &:hover{
+        opacity: 0.8;
+		box-shadow: 3px 5px 5px darken($color: #d3d0d3, $amount: 30);
+		transform: scale(1.1);
+		transition: transform 0.5s;
+    }
+}
+
+@mixin header //except main header
+{
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 25px;
+    background-color: #fff;
+
+    i{
+        font-size: 25px;
+        margin-right: 50px;
+    }
+}
+
+@mixin heading-image{
+    height: 250px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@mixin menu{
+    background-color: $grey-background;
+    border-radius: 35px 35px 0px 0px;
+    padding: 25px;
+    margin-top: -35px;
+}
+
+@mixin main-title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    
+        h1{
+            font-size: 28px;
+        }
+    
+        i{
+            font-size: 25px;
+        }
+}
+
+@mixin subtitle{
+    display: flex;
+    flex-direction: column;
+    background-color: $grey-background;
+    margin-top: 40px;
+    hr{
+        width: 11%;
+        height: 2px;
+        background-color: $tertiary-color;
+        border: none;
+        margin: 5px 0px;
+    }
+}
+
+@mixin footer
+{
+	background-color: black;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+
+	h1{
+	    color: #fff;
+		font-size: 20px;
+		margin-bottom: 5px;
+	}
+
+	i{
+		color:#fff;
+		font-size: 10px;
+	}
+
+	a{
+		margin: 5px;
+		text-decoration: none;
+		width: 100%;
+	}
+
+    .ustensile{
+	    @include footer-icone;
+    }
+
+    .hand{
+	    @include footer-icone;
+    }
+}
+
+@mixin footer-icone{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	
+	li{
+		margin-left:10px;
+	}
+}
+
+@mixin media{
+	body{
+		background: -webkit-linear-gradient(top left, $secondary-color, $primary-color);
+		background: -moz-linear-gradient(bottom right, $secondary-color, $primary-color);
+		background: linear-gradient(to bottom right, $secondary-color, $primary-color );
+	}
+	
+	#container{
+		width: 600px;
+		box-shadow: 5px 5px 50px #b8b5b8;
+	}
+}
