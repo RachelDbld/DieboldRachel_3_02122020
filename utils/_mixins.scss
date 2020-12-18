@@ -39,7 +39,6 @@
 @mixin button{
 	text-decoration: none;
 	border-radius: 48px;
-	padding: 19px 50px;
 	margin-bottom: 16px;
 	background: -webkit-linear-gradient(top left, $secondary-color, $primary-color);
 	background: -moz-linear-gradient(bottom right, $secondary-color, $primary-color);
@@ -136,14 +135,6 @@
 		text-decoration: none;
 		width: 100%;
 	}
-
-    .ustensile{
-	    @include footer-icone;
-    }
-
-    .hand{
-	    @include footer-icone;
-    }
 }
 
 @mixin footer-icone{

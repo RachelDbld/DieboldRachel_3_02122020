@@ -103,13 +103,15 @@ header
 
 #ville
 {
-	background-color: #ebebeb;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	padding: 16px;
-	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.3) inset;
+	background: -webkit-linear-gradient(180deg, #000, 0.1%, #ebebeb);
+	background: -moz-linear-gradient(180deg, #000, 0.1%, #ebebeb);
+	background: linear-gradient(180deg, #000, 0.1%, #ebebeb);
+	
 
 	i{
 		font-size: 19px;
@@ -163,16 +165,16 @@ header
 	}
 
 	h5{
-		background-color: $primary-color;
-	    display: flex;
+		display: flex;
+		justify-content: space-around;
 	    align-items: center;
 	    width: 22px;
-	    height: 22px;
-	    border-radius: 50%;
-	    justify-content: space-around;
+		height: 22px;
+		background-color: $primary-color;
+		border-radius: 50%;
+		margin-left: 1.6px;
 	    position: absolute;
 	    z-index: 2;
-	    margin-left: 1.6px;
 	}
 }
 
@@ -208,11 +210,11 @@ header
 	position: relative;
 	z-index: 1;
 	background-color: $grey-background;
-}
 
-.fonctionnement-info__legende--purple
-{
-	background-color:#9256dc2a;
+	&--purple
+    {
+	    background-color:#9256dc2a;
+    }
 }
 
 /*RESTAURANTS*/
@@ -254,7 +256,7 @@ header
     }
 }
 
-#image1, #image2, #image3, #image4
+.restaurant-img
 {
 	width: 310px;
 	height: 140px;
@@ -265,26 +267,22 @@ header
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-}
-
-#image1
-{
 	background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-}
 
-#image2
-{
-	background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
-}
+	&--note
+	{
+		background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+	}
 
-#image3
-{
-	background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
-}
+	&--fr
+	{
+		background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+	}
 
-#image4
-{
-	background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+	&--delice
+	{
+		background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+	}
 }
 
 .texte
@@ -331,6 +329,14 @@ header
 
 footer{
 	@include footer;
+}
+
+.ustensile{
+	@include footer-icone;
+}
+
+.hand{
+	@include footer-icone;
 }
 
 //media queries

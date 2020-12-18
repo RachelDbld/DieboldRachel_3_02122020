@@ -142,12 +142,21 @@ header{
 .button /*bouton*/
 {
     @include button;
+    padding: 19px 50px;
 }
 
 /*FOOTER*/
 
 footer{
 	@include footer;
+}
+
+.ustensile{
+	@include footer-icone;
+}
+
+.hand{
+	@include footer-icone;
 }
 
 //media queries

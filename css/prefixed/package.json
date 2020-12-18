@@ -1,0 +1,21 @@
+{
+  "name": "dieboldrachel_3_02122020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prefix": "postcss ./css/style.css ./css/stylep2.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "browserslist": "last 4 versions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RachelDbld/DieboldRachel_3_02122020.git"
+  },
+  "author": "",
+  "license": "ISC",
+
+  "bugs": {
+    "url": "https://github.com/RachelDbld/DieboldRachel_3_02122020/issues"
+  },
+  "homepage": "https://github.com/RachelDbld/DieboldRachel_3_02122020#readme"
+}
