@@ -1,3 +1,91 @@
+@mixin loader{
+	.loader{
+		border-radius: 150px;
+		border: 10px solid transparent;
+		border-top-color: #fff;
+		border-left-color: #fff;
+		border-bottom-color: #fff;
+		animation: horaire 1.5s linear infinite;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 1;
+	}
+	
+	.loader:before{
+		content:"";
+		border-radius: 150px;
+		animation: horaire 1s linear infinite;
+		position: relative;
+		height: 100px;
+		width: 100px;
+		border: 2px solid transparent;
+		border-top-color: #fff;
+	}
+	
+	.loader:after{
+		content:"";
+		border-radius: 150px;
+		animation: antihoraire 2.5s linear infinite;
+		position: absolute;
+		height: 50px;
+		width: 50px;
+		border: 3px solid transparent;
+		border-top-color: #fff;
+	}
+	
+	.loader-icone{
+		font-size: 100px;
+		margin-left: 10px;
+	}
+	  
+	@keyframes horaire {
+		0%  { 
+			transform: rotate(0deg)
+		}
+		100%{
+			transform: rotate(360deg)
+		}
+	}
+	
+	@keyframes antihoraire {
+		0%  { 
+			transform: rotate(360deg);
+		}
+		100%{
+			transform: rotate(0deg);
+		}
+	}
+
+	@keyframes fade_out{
+		0% {
+			opacity: 1;
+		}
+
+		50% {
+			opacity: 0.5;
+		  }
+
+		100% {
+			opacity: 0;
+		  }
+	}
+
+	@keyframes fade_in {
+		0% {
+		  opacity: 0;
+		}
+
+		50% {
+		  opacity: 0.5;
+		}
+		
+		100% {
+		  opacity: 1;
+		}
+	  }
+}
+
 @mixin h1
 {
 	font-family: 'Shrikhand', cursive;
@@ -7,13 +95,20 @@
 
 @mixin h2
 {
+	font-family: 'Shrikhand', cursive;
+    color: black;
+    font-size: 28px;
+}
+
+@mixin h3
+{
 	font-family: 'Roboto';
 	color: black;
 	font-size: 24px;
 	font-weight: 800;
 }
 
-@mixin h3
+@mixin h4
 {
 	font-family: 'Roboto';
 	color: black;
@@ -21,14 +116,14 @@
 	font-weight: 300;
 }
 
-@mixin h4{
+@mixin h5{
 	font-family: 'Roboto';
 	font-weight: 700;
 	font-size: 16px;
 	color: black;
 }
 
-@mixin h5{
+@mixin h6{
 	font-family: 'Roboto';
 	font-weight: 500;
 	font-size: 14px;
@@ -45,12 +140,13 @@
 	background: linear-gradient(to bottom right, $secondary-color, $primary-color );
 	box-shadow: 3px 5px 5px #d3d0d3;
 	transform: scale(1);
+	transition: transform 0.8s;
     
     &:hover{
         opacity: 0.8;
 		box-shadow: 3px 5px 5px darken($color: #d3d0d3, $amount: 30);
 		transform: scale(1.1);
-		transition: transform 0.5s;
+		transition: transform 0.8s;
     }
 }
 
@@ -70,11 +166,12 @@
     }
 }
 
-@mixin heading-image{
+@mixin heading-image ($image-url){
     height: 250px;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-image: url($image-url);
 }
 
 @mixin menu{
@@ -88,10 +185,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-    
-        h1{
-            font-size: 28px;
-        }
     
         i{
             font-size: 25px;
@@ -115,25 +208,23 @@
 @mixin footer
 {
 	background-color: black;
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
+	padding: 20px 0px 20px 20px;
 
 	h1{
 	    color: #fff;
 		font-size: 20px;
-		margin-bottom: 5px;
+		margin-bottom: 15px;
 	}
 
 	i{
 		color:#fff;
 		font-size: 10px;
+		margin-right: 10px;
 	}
 
 	a{
-		margin: 5px;
 		text-decoration: none;
-		width: 100%;
+		margin: 10px;
 	}
 }
 
@@ -141,10 +232,6 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	
-	li{
-		margin-left:10px;
-	}
 }
 
 @mixin media{
@@ -155,7 +242,7 @@
 	}
 	
 	#container{
-		width: 600px;
+		width: 800px;
 		box-shadow: 5px 5px 50px #b8b5b8;
 	}
 }

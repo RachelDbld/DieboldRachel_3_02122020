@@ -56,6 +56,173 @@ table {
 body {
   font-family: 'Roboto', sans-serif;
   width: auto;
+  background-color: #99E2D0;
+}
+
+.spinner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 50px;
+  color: #fff;
+  -webkit-animation: fade_out 1s ease-in 1s forwards;
+          animation: fade_out 1s ease-in 1s forwards;
+  opacity: 0;
+  position: relative;
+  display: none;
+}
+
+.spinner .loader {
+  border-radius: 150px;
+  border: 10px solid transparent;
+  border-top-color: #fff;
+  border-left-color: #fff;
+  border-bottom-color: #fff;
+  -webkit-animation: horaire 1.5s linear infinite;
+          animation: horaire 1.5s linear infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1;
+}
+
+.spinner .loader:before {
+  content: "";
+  border-radius: 150px;
+  -webkit-animation: horaire 1s linear infinite;
+          animation: horaire 1s linear infinite;
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border: 2px solid transparent;
+  border-top-color: #fff;
+}
+
+.spinner .loader:after {
+  content: "";
+  border-radius: 150px;
+  -webkit-animation: antihoraire 2.5s linear infinite;
+          animation: antihoraire 2.5s linear infinite;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border: 3px solid transparent;
+  border-top-color: #fff;
+}
+
+.spinner .loader-icone {
+  font-size: 100px;
+  margin-left: 10px;
+}
+
+@-webkit-keyframes horaire {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes horaire {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes antihoraire {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes antihoraire {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 h1 {
@@ -65,27 +232,33 @@ h1 {
 }
 
 h2 {
+  font-family: 'Shrikhand', cursive;
+  color: black;
+  font-size: 28px;
+}
+
+h3 {
   font-family: 'Roboto';
   color: black;
   font-size: 24px;
   font-weight: 800;
 }
 
-h3 {
+h4 {
   font-family: 'Roboto';
   color: black;
   font-size: 16px;
   font-weight: 300;
 }
 
-h4 {
+h5 {
   font-family: 'Roboto';
   font-weight: 700;
   font-size: 16px;
   color: black;
 }
 
-h5 {
+h6 {
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 14px;
@@ -94,6 +267,10 @@ h5 {
 
 #container {
   margin: auto;
+  -webkit-animation: fade_in 1s 2s ease-in forwards;
+          animation: fade_in 1s 2s ease-in forwards;
+  opacity: 0;
+  position: absolute;
 }
 
 /*HEADER*/
@@ -179,7 +356,7 @@ header h1 {
           flex-direction: column;
 }
 
-.decouverte__title h3 {
+.decouverte__title h4 {
   margin-top: 21px;
 }
 
@@ -193,6 +370,10 @@ header h1 {
           box-shadow: 3px 5px 5px #d3d0d3;
   -webkit-transform: scale(1);
           transform: scale(1);
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
   padding: 19px 24px;
 }
 
@@ -202,10 +383,10 @@ header h1 {
           box-shadow: 3px 5px 5px #898189;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
 }
 
 /*FONCTIONNEMENT*/
@@ -221,12 +402,12 @@ header h1 {
   background-color: #fff;
 }
 
-#fonctionnement h2 {
+#fonctionnement h3 {
   margin: 32px 0px 16px 16px;
   width: 100%;
 }
 
-#fonctionnement h5 {
+#fonctionnement h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -308,24 +489,24 @@ header h1 {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  padding-bottom: 50px;
 }
 
-#restaurant h2 {
+#restaurant h3 {
   margin: 40px 0px 25px 16px;
   width: 100%;
 }
 
 #restaurant a {
   text-decoration: none;
+}
+
+.restaurant-card {
   border-radius: 1rem;
   -webkit-box-shadow: 3px 6.4px 16px #d3d0d3;
           box-shadow: 3px 6.4px 16px #d3d0d3;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
-  transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s;
+  /*transform: scale(1);
+	transition: transform 0.8s;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,12 +526,12 @@ header h1 {
   margin: 10px;
 }
 
-#restaurant a:hover {
-  opacity: 0.8;
+.restaurant-card:hover {
+  /*opacity: 0.8;*/
   -webkit-box-shadow: 3px 5px 5px #898189;
           box-shadow: 3px 5px 5px #898189;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  /*transform: scale(1.1);
+			transition: transform 0.8s;*/
 }
 
 .restaurant-img {
@@ -391,16 +572,51 @@ header h1 {
   margin: 15px 20px;
 }
 
-.legende h3 {
+.legende h4 {
   margin-top: 8px;
 }
 
-#heart i {
-  color: black;
-  font-size: 24px;
+.heart {
+  margin-left: 100px;
 }
 
-#palette h5, #note h5 {
+.heart i {
+  color: #000;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  margin: -12px 0px 0px 8px;
+  opacity: 1;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.heart i:hover {
+  opacity: 0;
+}
+
+.full-heart i {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff79da), to(#9356dc));
+  background-image: linear-gradient(to right, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.full-heart i:hover {
+  content: "";
+  opacity: 1;
+}
+
+.new {
   color: black;
   font-size: 14px;
   width: 80px;
@@ -415,45 +631,32 @@ header h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin: 5px 20px 150px 0px;
+  margin: 10px 0px 0px 210px;
   position: absolute;
   z-index: 2;
-}
-
-#delice {
-  margin-bottom: 50px;
 }
 
 /*FOOTER*/
 footer {
   background-color: black;
-  padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  padding: 20px 0px 20px 20px;
 }
 
 footer h1 {
   color: #fff;
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 footer i {
   color: #fff;
   font-size: 10px;
+  margin-right: 10px;
 }
 
 footer a {
-  margin: 5px;
   text-decoration: none;
-  width: 100%;
+  margin: 10px;
 }
 
 .ustensile {
@@ -469,10 +672,6 @@ footer a {
           align-items: center;
 }
 
-.ustensile li {
-  margin-left: 10px;
-}
-
 .hand {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -486,17 +685,13 @@ footer a {
           align-items: center;
 }
 
-.hand li {
-  margin-left: 10px;
-}
-
 @media only screen and (min-width: 840px) {
   body {
     background: -webkit-gradient(linear, left top, right bottom, from(#ff79da), to(#9356dc));
     background: linear-gradient(to bottom right, #ff79da, #9356dc);
   }
   #container {
-    width: 600px;
+    width: 800px;
     -webkit-box-shadow: 5px 5px 50px #b8b5b8;
             box-shadow: 5px 5px 50px #b8b5b8;
   }

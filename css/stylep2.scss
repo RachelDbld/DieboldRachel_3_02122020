@@ -48,6 +48,17 @@ table {
 @import"../utils/variables";
 @import"../utils/mixins";
 
+/*.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebebeb;
+}
+
+.loading ::after{
+
+}*/
+
 body
 {
 	font-family: 'Roboto', sans-serif;
@@ -77,6 +88,10 @@ h5{
 	@include h5;
 }
 
+h6{
+    @include h6;
+}
+
 #container
 {
     margin: auto;
@@ -91,9 +106,20 @@ header{
     @include menu;
 }
 
-#heading-image{
-    @include heading-image;
-    background-image : url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+#heading-image {
+    @include heading-image("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+}
+
+#heading-image3 {
+    @include heading-image ("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg")
+}
+
+#heading-image4 {
+    @include heading-image ("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg")
+}
+
+#heading-image5 {
+    @include heading-image ("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg")
 }
 
 #main-title{
@@ -115,20 +141,40 @@ header{
     margin: 15px 0px;
     padding: 10px 10px;
     height: 50px;
+    position: relative;
 
-    h3{
+    &:hover .validator{
+        opacity: 1;
+    }
+
+    h4{
       margin-top: 10px;
       font-size: 14px;
     }
+}
 
-    .price{
-	  color: black;
-      font-size: 18px;
-      display: flex;
-      justify-content: flex-start;
-      align-self: flex-end
+.price{
+    color: black;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-end;
+  }
 
-    }
+.validator{
+
+    background-color: $tertiary-color;
+    border-radius: 0px 14px 14px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+    height: 50px;
+    color: #fff;
+    font-size: 28px;
+    position: absolute;
+    opacity: 0;
 }
 .commande{
     background-color: $grey-background;

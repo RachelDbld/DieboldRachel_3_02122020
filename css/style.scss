@@ -53,6 +53,23 @@ body
 {
 	font-family: 'Roboto', sans-serif;
 	width: auto;
+	background-color: #99E2D0;
+}
+
+.spinner{
+	@include loader;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 50px;
+	color: #fff;
+	animation: fade_out 1s ease-in 1s forwards;
+	opacity: 0;
+	position: relative;
+	display: none;
 }
 
 h1
@@ -78,9 +95,16 @@ h5{
 	@include h5
 }
 
+h6{
+	@include h6
+}
+
 #container
 {
-    margin: auto;
+	margin: auto;
+	animation: fade_in 1s 2s ease-in forwards;
+	opacity: 0;
+	position: absolute;
 }
 
 /*HEADER*/
@@ -139,7 +163,7 @@ header
 	display: flex;
 	flex-direction: column;
 
-	h3{
+	h4{
 		margin-top: 21px;
 	}
 }
@@ -159,12 +183,12 @@ header
 	padding-bottom: 40px;
 	background-color: #fff;
 
-	h2{
+	h3{
 		margin: 32px 0px 16px 16px;
 		width: 100%;
 	}
 
-	h5{
+	h6{
 		display: flex;
 		justify-content: space-around;
 	    align-items: center;
@@ -227,33 +251,38 @@ header
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+	padding-bottom: 50px;
 
-	h2{
+	h3{
 		margin: 40px 0px 25px 16px;
 		width: 100%;
 	}
 
 	a{
 		text-decoration: none;
-	    border-radius: 1rem;
-		box-shadow: 3px 6.4px 16px #d3d0d3;
-		transform: scale(1);
-		transition: transform 0.4s;
+	}
+}
 
-	    display: flex;
-	    flex-direction: column;
-	    justify-content: center;
-	    align-items: center;
-	    align-content: center;
-	    width: 310px;
-		margin: 10px;
-		
-		&:hover {
-			opacity: 0.8;
+.restaurant-card{
+	border-radius: 1rem;
+	box-shadow: 3px 6.4px 16px #d3d0d3;
+	/*transform: scale(1);
+	transition: transform 0.8s;*/
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 310px;
+	margin: 10px;
+
+			&:hover {
+			/*opacity: 0.8;*/
 			box-shadow: 3px 5px 5px darken($color: #d3d0d3, $amount: 30);
-			transform: scale(1.1);
+			/*transform: scale(1.1);
+			transition: transform 0.8s;*/
 		}
-    }
 }
 
 .restaurant-img
@@ -294,18 +323,49 @@ header
 	margin: 15px 20px;
 }
 
-.legende h3
+.legende h4
 {
 	margin-top: 8px;
 }
-
-#heart i{
-	color: black;
-	font-size: 24px;
+.heart{
+	margin-left: 100px;
 }
 
-#palette h5, #note h5{
+.heart i{
+	color: #000;
+	font-size: 24px;
+	cursor: pointer;
+	position: absolute;
+	z-index: 2;
+	margin: -12px 0px 0px 8px;
+	opacity: 1;
+	transition: 1s;
 
+	&:hover{
+	opacity: 0;
+	}
+}
+
+.full-heart i{
+	background-image: linear-gradient(to right, $secondary-color, $primary-color);   
+	-webkit-background-clip: text;
+	-moz-background-clip: text; 
+	background-clip: text;
+	color: transparent;
+	font-size: 24px;
+	cursor: pointer;
+	z-index: 1;
+	position: relative;
+	opacity: 0;
+	transition: 1s;
+
+		&:hover{
+			content:"";
+			opacity: 1;
+		}
+}
+
+.new{
 	color: black;
     font-size: 14px;
   	width: 80px;
@@ -314,15 +374,9 @@ header
 	display: flex;
  	justify-content: center;
 	align-items: center;
-	align-self:flex-end;
-	margin: 5px 20px 150px 0px;
+	margin: 10px 0px 0px 210px;
   	position: absolute;
- 	z-index: 2;
-}
-
-#delice
-{
-	margin-bottom: 50px;
+	 z-index: 2;
 }
 
 /*FOOTER*/
