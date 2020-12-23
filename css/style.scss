@@ -68,8 +68,9 @@ body
 	color: #fff;
 	animation: fade_out 1s ease-in 1s forwards;
 	opacity: 0;
-	position: relative;
-	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 h1
@@ -104,7 +105,6 @@ h6{
 	margin: auto;
 	animation: fade_in 1s 2s ease-in forwards;
 	opacity: 0;
-	position: absolute;
 }
 
 /*HEADER*/
@@ -329,20 +329,35 @@ header
 }
 .heart{
 	margin-left: 100px;
+	position: relative;
 }
 
-.heart i{
+.heart .empty-heart{
+	color: #000;
+	font-size: 24px;
+	cursor: pointer;
+	position: relative;
+
+	z-index: 2;
+	opacity: 1;
+	transition: 1s;
+}
+
+.heart .full-heart{
 	color: #000;
 	font-size: 24px;
 	cursor: pointer;
 	position: absolute;
-	z-index: 2;
-	margin: -12px 0px 0px 8px;
-	opacity: 1;
+	z-index: 3;
+	opacity: 0;
 	transition: 1s;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
 
 	&:hover{
-	opacity: 0;
+	opacity: 1;
 	}
 }
 

@@ -52,16 +52,6 @@ table {
 /*RESET CSS*/
 /*REGLES GENERALES*/
 /*pink-purple gradient button*/
-/*.loading{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ebebeb;
-}
-
-.loading ::after{
-
-}*/
 body {
   font-family: 'Roboto', sans-serif;
   width: auto;
