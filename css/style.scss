@@ -66,7 +66,7 @@ body
 	margin-right: auto;
 	font-size: 50px;
 	color: #fff;
-	animation: fade_out 1s ease-in 1s forwards;
+	animation: fade_out 3s ease-in 0.5s forwards;
 	opacity: 0;
 	position: absolute;
 	width: 100%;
@@ -184,8 +184,7 @@ header
 	background-color: #fff;
 
 	h3{
-		margin: 32px 0px 16px 16px;
-		width: 100%;
+		margin: 25px 15px;
 	}
 
 	h6{
@@ -254,8 +253,9 @@ header
 	padding-bottom: 50px;
 
 	h3{
-		margin: 40px 0px 25px 16px;
-		width: 100%;
+		margin: 25px 15px;
+		display: flex;
+		align-self: flex-start;
 	}
 
 	a{
@@ -266,8 +266,8 @@ header
 .restaurant-card{
 	border-radius: 1rem;
 	box-shadow: 3px 6.4px 16px #d3d0d3;
-	/*transform: scale(1);
-	transition: transform 0.8s;*/
+	transform: scale(1);
+	transition: transform 0.8s;
 
 	display: flex;
 	flex-direction: column;
@@ -278,10 +278,10 @@ header
 	margin: 10px;
 
 			&:hover {
-			/*opacity: 0.8;*/
+			opacity: 0.8;
 			box-shadow: 3px 5px 5px darken($color: #d3d0d3, $amount: 30);
-			/*transform: scale(1.1);
-			transition: transform 0.8s;*/
+			transform: scale(1.1);
+			transition: transform 0.8s;
 		}
 }
 
@@ -327,30 +327,34 @@ header
 {
 	margin-top: 8px;
 }
+
 .heart{
 	margin-left: 100px;
 	position: relative;
 }
 
-.heart .empty-heart{
+.empty-heart{
 	color: #000;
 	font-size: 24px;
 	cursor: pointer;
 	position: relative;
-
 	z-index: 2;
 	opacity: 1;
-	transition: 1s;
+	transition: 2s;
+
+	&:hover{
+		opacity: 0;
+		}
 }
 
-.heart .full-heart{
+.full-heart{
 	color: #000;
 	font-size: 24px;
 	cursor: pointer;
 	position: absolute;
 	z-index: 3;
 	opacity: 0;
-	transition: 1s;
+	transition: 2s;
 	top: 0;
 	left: 0;
 	width: 0;
@@ -366,13 +370,13 @@ header
 	-webkit-background-clip: text;
 	-moz-background-clip: text; 
 	background-clip: text;
+	-webkit-text-stroke: 1px #f6f6f6;
 	color: transparent;
 	font-size: 24px;
 	cursor: pointer;
 	z-index: 1;
 	position: relative;
 	opacity: 0;
-	transition: 1s;
 
 		&:hover{
 			content:"";

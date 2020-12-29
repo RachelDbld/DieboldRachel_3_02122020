@@ -126,13 +126,6 @@ header i {
   margin-right: 50px;
 }
 
-#menu {
-  background-color: #f6f6f6;
-  border-radius: 35px 35px 0px 0px;
-  padding: 25px;
-  margin-top: -35px;
-}
-
 #heading-image {
   height: 250px;
   background-size: cover;
@@ -182,6 +175,71 @@ header i {
   font-size: 25px;
 }
 
+#menu {
+  background-color: #f6f6f6;
+  border-radius: 35px 35px 0px 0px;
+  padding: 25px;
+  margin-top: -35px;
+}
+
+.heart {
+  margin-left: 50px;
+  position: relative;
+}
+
+.empty-heart {
+  color: #000;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  opacity: 1;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.empty-heart:hover {
+  opacity: 0;
+}
+
+.full-heart {
+  color: #000;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 3;
+  opacity: 0;
+  -webkit-transition: 2s;
+  transition: 2s;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.full-heart:hover {
+  opacity: 1;
+}
+
+.full-heart i {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff79da), to(#9356dc));
+  background-image: linear-gradient(to right, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1px #f6f6f6;
+  color: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  opacity: 0;
+}
+
+.full-heart i:hover {
+  content: "";
+  opacity: 1;
+}
+
 .subtitle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,6 +260,57 @@ header i {
   margin: 5px 0px;
 }
 
+.fade-in--entrees {
+  -webkit-animation: fade_in 1s cubic-bezier(1, 0.46, 1, 1);
+          animation: fade_in 1s cubic-bezier(1, 0.46, 1, 1);
+}
+
+.fade-in--plats {
+  -webkit-animation: fade_in 2.2s cubic-bezier(1, 0.46, 1, 1);
+          animation: fade_in 2.2s cubic-bezier(1, 0.46, 1, 1);
+}
+
+.fade-in--desserts {
+  -webkit-animation: fade_in 3.5s cubic-bezier(1, 0.46, 1, 1);
+          animation: fade_in 3.5s cubic-bezier(1, 0.46, 1, 1);
+}
+
+@-webkit-keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .meal {
   background-color: #fff;
   border-radius: 14px;
@@ -219,11 +328,6 @@ header i {
   margin: 15px 0px;
   padding: 10px 10px;
   height: 50px;
-  position: relative;
-}
-
-.meal:hover .validator {
-  opacity: 1;
 }
 
 .meal h4 {
@@ -237,35 +341,71 @@ header i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
-.validator {
+.animation-check {
   background-color: #99e2d0;
   border-radius: 0px 14px 14px 0px;
+  height: 70px;
+  width: 20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px 10px;
-  height: 50px;
+  margin: 0px -10px 0px -120px;
+  opacity: 0;
+}
+
+.animation-check:hover {
+  margin: 0px -10px 0px -20px;
+  opacity: 1;
+}
+
+.check {
   color: #fff;
   font-size: 28px;
-  position: absolute;
-  opacity: 0;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.check:hover {
+  -webkit-animation: spin 0.5s linear ease-in-out forwards;
+          animation: spin 0.5s linear ease-in-out forwards;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
 }
 
 .commande {
@@ -318,7 +458,7 @@ header i {
 /*FOOTER*/
 footer {
   background-color: black;
-  padding: 20px 0px 20px 20px;
+  padding: 20px;
 }
 
 footer h1 {
@@ -333,9 +473,25 @@ footer i {
   margin-right: 10px;
 }
 
+footer i:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff79da), to(#9356dc));
+  background-image: linear-gradient(to right, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 footer a {
   text-decoration: none;
   margin: 10px;
+}
+
+footer h6:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff79da), to(#9356dc));
+  background-image: linear-gradient(to right, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .ustensile {
@@ -366,13 +522,12 @@ footer a {
 
 @media only screen and (min-width: 840px) {
   body {
-    background: -webkit-gradient(linear, left top, right bottom, from(#ff79da), to(#9356dc));
-    background: linear-gradient(to bottom right, #ff79da, #9356dc);
+    background-color: #99E2D0;
   }
   #container {
     width: 800px;
-    -webkit-box-shadow: 5px 5px 50px #b8b5b8;
-            box-shadow: 5px 5px 50px #b8b5b8;
+    -webkit-box-shadow: 0px 0px 50px 20px #32b091;
+            box-shadow: 0px 0px 50px 20px #32b091;
   }
 }
 /*# sourceMappingURL=stylep2.css.map */

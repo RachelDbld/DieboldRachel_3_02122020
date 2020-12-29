@@ -92,10 +92,6 @@ header{
     @include header;
 }
 
-#menu{
-    @include menu;
-}
-
 #heading-image {
     @include heading-image("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
 }
@@ -116,8 +112,105 @@ header{
     @include main-title;
 }
 
+#menu{
+    @include menu;
+}
+
+.heart{
+	margin-left: 50px;
+	position: relative;
+}
+
+.empty-heart{
+	color: #000;
+	font-size: 24px;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+	opacity: 1;
+	transition: 2s;
+
+	&:hover{
+		opacity: 0;
+		}
+}
+
+.full-heart{
+	color: #000;
+	font-size: 24px;
+	cursor: pointer;
+	position: absolute;
+	z-index: 3;
+	opacity: 0;
+	transition: 2s;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+
+	&:hover{
+	opacity: 1;
+	}
+}
+
+.full-heart i{
+	background-image: linear-gradient(to right, $secondary-color, $primary-color);   
+	-webkit-background-clip: text;
+	-moz-background-clip: text; 
+    background-clip: text;
+    -webkit-text-stroke: 1px #f6f6f6;
+    color: transparent;
+	font-size: 24px;
+	cursor: pointer;
+	z-index: 1;
+	position: relative;
+	opacity: 0;
+
+		&:hover{
+			content:"";
+			opacity: 1;
+		}
+}
+
 .subtitle{
     @include subtitle;
+}
+
+.fade-in{
+    &--entrees{
+
+        animation: fade_in 1s cubic-bezier(1, 0.46, 1, 1);
+    }
+
+    &--plats{
+    animation: fade_in 2.2s cubic-bezier(1, 0.46, 1, 1);
+    }
+
+    &--desserts{
+    animation: fade_in 3.5s cubic-bezier(1, 0.46, 1, 1);
+    }
+}
+
+@keyframes fade_in {
+    0% {
+      opacity: 0;
+    }
+
+    25%{
+        opacity:0.2;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.7;
+      }
+    
+    100% {
+      opacity: 1;
+    }
 }
 
 .meal{
@@ -131,11 +224,6 @@ header{
     margin: 15px 0px;
     padding: 10px 10px;
     height: 50px;
-    position: relative;
-
-    &:hover .validator{
-        opacity: 1;
-    }
 
     h4{
       margin-top: 10px;
@@ -147,26 +235,50 @@ header{
     color: black;
     font-size: 18px;
     display: flex;
-    justify-content: flex-start;
     align-self: flex-end;
-  }
+}
 
-.validator{
-
+.animation-check{
     background-color: $tertiary-color;
     border-radius: 0px 14px 14px 0px;
+    height: 70px;
+    width: 20%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px 10px;
-    height: 50px;
+    margin: 0px -10px 0px -120px;
+
+    opacity: 0;
+
+    &:hover{
+        margin: 0px -10px 0px -20px;
+        opacity: 1;
+    }
+}
+
+.check{
     color: #fff;
     font-size: 28px;
-    position: absolute;
-    opacity: 0;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+        
+        &:hover{
+            animation: spin 0.5s linear ease-in-out forwards;
+            animation-duration: 0.5s;
+            animation-delay: 0s;
+        }
 }
-.commande{
+
+@keyframes spin {
+    from{
+        transform: rotate(180deg);
+    }
+    to{
+        transform: rotateY(0deg);
+    }
+}
+
+.commande /*bouton commander*/{
     background-color: $grey-background;
 	display: flex;
 	flex-direction: column;
@@ -188,7 +300,7 @@ footer{
 }
 
 .ustensile{
-	@include footer-icone;
+    @include footer-icone;
 }
 
 .hand{
