@@ -131,7 +131,7 @@ header i:hover {
   background-image: -webkit-gradient(linear, left top, right top, from(#ff79da), to(#9356dc));
   background-image: linear-gradient(to right, #ff79da, #9356dc);
   -webkit-background-clip: text;
-  background-clip: text;
+  -moz-background-clip: text;
   color: transparent;
 }
 
@@ -234,7 +234,7 @@ header i:hover {
   background-image: -webkit-gradient(linear, left top, right top, from(#ff79da), to(#9356dc));
   background-image: linear-gradient(to right, #ff79da, #9356dc);
   -webkit-background-clip: text;
-  background-clip: text;
+  -moz-background-clip: text;
   -webkit-text-stroke: 1px #f6f6f6;
   color: transparent;
   font-size: 24px;
@@ -540,7 +540,7 @@ footer i:hover {
   background-image: -webkit-gradient(linear, left top, right top, from(#ff79da), to(#9356dc));
   background-image: linear-gradient(to right, #ff79da, #9356dc);
   -webkit-background-clip: text;
-  background-clip: text;
+  -moz-background-clip: text;
   color: transparent;
 }
 
@@ -553,7 +553,7 @@ footer h6:hover {
   background-image: -webkit-gradient(linear, left top, right top, from(#ff79da), to(#9356dc));
   background-image: linear-gradient(to right, #ff79da, #9356dc);
   -webkit-background-clip: text;
-  background-clip: text;
+  -moz-background-clip: text;
   color: transparent;
 }
 
