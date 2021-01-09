@@ -697,7 +697,7 @@ footer a {
   margin: 10px;
 }
 
-footer h6:hover {
+footer a:hover h6, footer a:hover i {
   background-image: -webkit-gradient(linear, left top, right top, from(#ff79da), to(#9356dc));
   background-image: linear-gradient(to right, #ff79da, #9356dc);
   -webkit-background-clip: text;

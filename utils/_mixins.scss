@@ -243,7 +243,7 @@
 		margin: 10px;
 	}
 
-	h6:hover{
+    a:hover h6, a:hover i{
 		background-image: linear-gradient(to right, $secondary-color, $primary-color);   
 	    -webkit-background-clip: text;
 	    -moz-background-clip: text; 
@@ -264,6 +264,6 @@
 	
 	#container{
 		width: 800px;
-		box-shadow: 0px 0px 50px 20px darken($color: $tertiary-color, $amount: 30);;
+		box-shadow: 0px 0px 50px 20px darken($color: $tertiary-color, $amount: 30);
 	}
 }
